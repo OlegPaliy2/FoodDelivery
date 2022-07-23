@@ -1,0 +1,169 @@
+
+.deliveryForm{
+ display: flex;
+ justify-content: space-between;
+    margin-bottom: 100px;
+    width: 80%;
+   
+}
+@media all and (max-width: 1025px){
+  .deliveryForm{
+   margin-left: 8%;
+  }
+}
+.deliveryFormCard{
+    padding: 20px;
+    border-radius: 6px;
+    background-color: #fff;
+    width: 50%;
+    margin: 0 10px 20px;
+    display: flex;
+    flex-direction: column;
+}
+.rightCard{
+  max-width: 460px;
+}
+@media all and (max-width: 1025px){
+  .deliveryFormCard{
+    width: 450px;
+  }
+}
+.paymentBlock input[type=radio]:checked + label {
+    background: #212529;
+    color: white;
+    border-radius: 3px;
+
+}
+.paymentBlock input[type=radio]{
+    display: none;
+}
+
+.paymentBlock label {
+	display: inline-block;
+	cursor: pointer;
+	padding: 0px 5px;
+	line-height: 24px;
+	border-radius: 6px;
+	user-select: none;
+    width: 100%;
+    font-weight: 500;
+    text-align: center;
+}
+.deliveryForm :focus{
+    border-color:#212529;
+    box-shadow: 0 0 0 0.10rem #212529;
+}
+.btn{
+    background-color: #212529;
+    border: none;
+}
+.title{
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+//----------------------------------------------basket-----------------------------------------
+  .basketSideBar {
+    background: white;
+    transform: translateX(0%);
+    padding-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+   
+  }
+
+  .basketSidebarHeader {
+    padding-left: 20px;
+  }
+  
+  .basketSidebarHeader h3 {
+    margin: 0;
+  }
+  
+  .shoppingCartCard {
+    display: flex;
+  }
+  
+  .shoppingCartCardPriceGroup {
+    display: flex;
+    justify-content: space-between;
+    width: 275px;
+  
+  }
+  
+  .shoppingCartCardImage {
+    padding: 20px;
+    padding-top: 0px;
+  }
+  
+  .shoppingCardFooter {
+    display: flex;
+    width: 100%;
+    height: 57px;
+    border: none;
+    padding: 0;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .TotalPrice {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    color: #fff;
+    background: #212529;
+  }
+  
+  .order {
+  
+    width: 100%;
+    height: 100%;
+  
+  }
+  
+  .buy {
+    background-color:#212529;
+    border: none;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+  }
+  
+  .buy a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .CountRange {
+    width: 80px;
+  }
+  .CountRange button{
+    border: none;
+     border-radius: 3px;
+    background-color:#212529 ;
+    color: #dee2e6;
+    width: 25px;
+  }
+  
+  .shoppingCartCardClearButton button {
+    border: 2px solid #212529;
+    background-color: white;
+    color:#212529;
+    border-radius: 5px;
+  }
+  .shoppingCardFooter {
+    display: flex;
+    width: 100%;
+    height: 100px;;
+    border: none;
+    padding: 0;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  
+  
+

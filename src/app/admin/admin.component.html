@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="adminContainer d-flex align-items-start">
+    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <button class="nav-link" type="button" [routerLink]="[ 'admin-shop']"
+        routerLinkActive="active">Ресторан</button>
+      <button class="nav-link" type="button" [routerLink]="[ 'admin-products']"
+        routerLinkActive="active">Продукти</button>
+      <button class="nav-link" type="button" [routerLink]="[ 'admin-discounts']"
+        routerLinkActive="active">Акції</button>
+      <button class="nav-link" type="button" [routerLink]="[ 'admin-orders']"
+        routerLinkActive="active">Замовлення</button>
+      <br>
+      <!-- <button (click)="signOut()" class="nav-link" type="button"
+        style="background-color: #E04F5F; color: white;">Вихід   <img style="margin-left: 10px;"
+          src="https://firebasestorage.googleapis.com/v0/b/sushiroom-926c5.appspot.com/o/images%2Flogout.png?alt=media&token=6d52da17-bee2-46d4-9c6a-08b3b7e1f36b"
+          alt=""></button> -->
+    </div>
+    <div class="tab-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

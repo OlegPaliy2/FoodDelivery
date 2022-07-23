@@ -1,0 +1,35 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid"> 
+      <a class="navbar-brand" [routerLink]="[ '' ]">
+          <h1>
+              ХЖ
+          </h1>
+          <h5>
+            Хочу Жерти
+          </h5>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="[ '/discounts' ]" routerLinkActive="active">Акції</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="[ '/payment' ]" routerLinkActive="active">Оплата</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="[ '/admin' ]" routerLinkActive="active">Admin</a>
+          </li>
+          <li class="nav-item basket">
+            <a class="nav-link" [routerLink]="[ '/basket' ]" routerLinkActive="active">
+              Кошик</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

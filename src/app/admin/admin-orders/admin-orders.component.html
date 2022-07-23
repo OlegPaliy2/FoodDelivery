@@ -1,0 +1,43 @@
+<div class="input-group mb-">
+    <input type="text" class="form-control">
+  </div>
+  <hr>
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Status</th>
+        <th scope="col">Phone number</th>
+        <th scope="col">Adress</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Payment</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of adminOrders">
+        <td>{{ order.id }}</td>
+        <td>{{ order.name }}</td>
+        <td>{{ order.price }} грн</td>
+        <td>{{ order.status}}</td>
+        <td>{{ order.phoneNumber}}</td>
+        <td>{{ order.address}}</td>
+        <td></td>
+        <td>{{ order.payment}}</td>
+        <td>
+          <div class="action">
+            <button class="btn btn-outline-dark" (click)="deleteOrder(order)">delete</button>
+            </div>
+        </td>
+  
+      </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  
+

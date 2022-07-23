@@ -1,0 +1,96 @@
+<div class="title"><h4>Введіть дані для доставки</h4></div>
+<div class="deliveryForm">
+  <div class="deliveryFormCard">
+    <form class="row g-3 needs-validation" [formGroup]="orderForm" onsubmit="confirmOrder.disabled = true; return true;" (ngSubmit)="confirmOrder()" novalidate>
+      <div class="col-md-12">
+        <label for="validationCustom01" class="form-label">Ім'я*</label>
+        <input type="text" class="form-control" id="validationCustom01" formControlName="name" required>
+      </div>
+      <div class="col-md-12">
+        <label for="validationCustom02" class="form-label">Телефон*</label>
+        <input type="text" class="form-control" id="validationCustom02" formControlName="phoneNumber" required>
+      </div>
+      <div class="col-md-12">
+        <label for="validationCustom03" class="form-label">Електронна адреса</label>
+        <input type="text" class="form-control" id="validationCustom03" formControlName="email">
+      </div>
+      <div class="col-md-12">
+        <label for="validationCustom04" class="form-label">Адреса доставки*</label>
+        <input type="text" class="form-control" id="validationCustom04" formControlName="address" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="validationCustom05" class="form-label">Номер будинку*</label>
+        <input type="text" class="form-control" id="validationCustom05" formControlName="houseNumber" required>
+      </div>
+      <div class="col-md-6">
+        <label for="validationCustom05" class="form-label">Квартири</label>
+        <input type="text" class="form-control" id="validationCustom05"  formControlName="apartmentNumber" >
+      </div>
+      <h5>Спосіб оплати</h5>
+      <div class="paymentBlock d-flex justify-content-around">
+        <input #cash (click)="changePayment(cash)" id="cash" name="payment" type="radio" formControlName="payment" value="cash" >
+        <label for="cash">Готівкою</label>
+        <input #card (click)="changePayment(card)" id="card" name="payment" type="radio" formControlName="payment" value="card" checked>
+        <label for="card">Картою</label>
+        <input #online (click)="changePayment(online)" id="online" name="payment" type="radio" formControlName="payment" value="online">
+        <label for="online">Онлайн</label>
+      </div>
+      <div class="form-floating">
+        <textarea class="form-control" placeholder="Примітки" id="floatingTextarea2" style="height: 100px" formControlName="notes"></textarea>
+        <label for="floatingTextarea2"><strong>Введіть промокод тут!</strong></label>
+      </div>
+
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary" name="confirmOrder" [disabled]="orderForm.invalid" type="submit">Оформити замовлення</button>
+      </div>
+    </form>
+  </div>
+  
+  <div class="deliveryFormCard rightCard">
+    <div class="basketSideBar ms-auto" *ngIf="basket.length>0">
+      <div class="basketSidebarHeader">
+        <div>
+          <h3>Кошик</h3>
+        </div>
+      </div>
+      <hr>
+      <div class="shoppingCard">
+        <div class="shoppingCartCard" *ngFor="let b of basket">
+          <div class="shoppingCartCardImage">
+              <img [src]="b.imagePath" width="100px">
+          </div>
+          <div class="shoppingCartCardInfo">
+            <h5>{{b.name}}</h5>
+            <div class="shoppingCartCardPriceGroup">
+              <div class="productCardPrice">
+                  <strong>{{b.price*b.count}} грн</strong>
+              </div>
+              <div class="CountRange">
+                  <div style="display: flex;">
+                  <button type="button" (click)="changeCount(b,false)">-</button>
+                  <input type="text" style= "width: 29px; border: none;" readonly [value]="b.count">
+                  <button type="button" (click)="changeCount(b,true)">+</button>
+                  </div>
+              </div>
+            </div>
+            <div class="productInfo">{{b.description}}</div>
+            <div class="shoppingCartCardClearButton">
+              <button (click)="deleteProduct(b)">× Видалити</button>
+            </div>
+          <hr>
+      </div>
+        </div>
+      </div>
+      <div class="shoppingCardFooter">
+        <div class="TotalPrice"><h5>Замовлення на суму:</h5>  <h2>{{total}} грн</h2></div>
+      
+    </div>
+      
+    
+  </div>
+  
+
+</div>
+
+

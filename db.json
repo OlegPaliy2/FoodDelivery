@@ -1,0 +1,185 @@
+{
+  "discounts": [
+    {
+      "description": "-15 % на Самовивіз",
+      "imagePath": "https://la.ua/wp-content/uploads/2021/08/7-1.jpg",
+      "name": "65u56u65",
+      "id": 1
+    },
+    {
+      "description": "Кеш Бек 5%",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/images%2F00%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B8%CC%86%20%D0%BA%D1%8D%D1%88%D0%B1%D1%8D%D0%BA%205.png.png?alt=media&token=0de8b844-c09d-45ad-94c0-2f386faf086a",
+      "name": "Q2G5DE4FCM7F45E ",
+      "id": 2
+    },
+    {
+      "description": "3+1 на Піцу",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/images%2F3%2B1.jpg.jpg?alt=media&token=d5e4dbd5-f412-43b8-b8e3-e8974b4540f8",
+      "name": "I8340MK3JZN3WPW ",
+      "id": 3
+    }
+  ],
+  "shop": [
+    {
+      "name": "McDonalds",
+      "path": "mcdonalds",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/shop%2F732217.png.png?alt=media&token=f0ee82e0-8f25-4916-af3c-92b9f53669b6",
+      "id": 1
+    },
+    {
+      "name": "LaPiec",
+      "path": "lapiec",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/shop%2F%D0%B7%D0%B0%D0%B2%D0%B0%D0%BD%D1%82%D0%B0%D0%B6%D0%B5%D0%BD%D0%BD%D1%8F.png.png?alt=media&token=f80081a7-dc7f-4963-822a-967bac25645d",
+      "id": 2
+    },
+    {
+      "name": "SushiRoom",
+      "path": "sushiroom",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/shop%2Flogo.png.png?alt=media&token=b175d95f-e0ab-42d9-bb68-d8b18487451c",
+      "id": 3
+    },
+    {
+      "name": "KFC",
+      "path": "kfc",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/shop%2Fworldfest-kfc-png-logo-6.png.png?alt=media&token=1d9de92b-f1fa-4485-ab1e-35db90805713",
+      "id": 4
+    },
+    {
+      "name": "7777",
+      "path": "llllll",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/shop%2F85.png.png?alt=media&token=45daae2d-c9bf-40cc-abb7-c839f7afa07d",
+      "id": 5
+    }
+  ],
+  "product": [
+    {
+      "shop": {
+        "name": "McDonalds",
+        "path": "mcdonalds",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/shop%2F732217.png.png?alt=media&token=f0ee82e0-8f25-4916-af3c-92b9f53669b6",
+        "id": 1
+      },
+      "name": "Філе-о-фіш",
+      "path": "fileofish",
+      "description": "Ніжне рибне філе із тріскових риб, засмажене у хрумкому паніруванні, півшматочка сиру “Чеддер”, заправлені пікантним соусом, у пухкій булочці з пшеничного борошна.",
+      "weight": "130 г",
+      "price": 60,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/product%2FSdwch_File-o-Fish.jfif.jfif?alt=media&token=88bae649-3a6e-499c-bb2f-42aa413477bd",
+      "count": 1,
+      "id": 1
+    },
+    {
+      "shop": {
+        "name": "McDonalds",
+        "path": "mcdonalds",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/shop%2F732217.png.png?alt=media&token=f0ee82e0-8f25-4916-af3c-92b9f53669b6",
+        "id": 1
+      },
+      "name": "Біг Мак",
+      "path": "bigmac",
+      "description": "Два біфштекси з натуральної яловичини, цибуля, маринований огірок, сир “Чеддер”, свіжий салат, заправлені спеціальним соусом, у булочці з насінням сезаму.",
+      "weight": "250 г",
+      "price": 90,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/product%2Fthumb.Sdwch_BigMac.jfif.jfif?alt=media&token=bb99e06b-758b-4761-8d2c-1e2741ee284f",
+      "count": 1,
+      "id": 2
+    },
+    {
+      "shop": {
+        "name": "McDonalds",
+        "path": "mcdonalds",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/shop%2F732217.png.png?alt=media&token=f0ee82e0-8f25-4916-af3c-92b9f53669b6",
+        "id": 1
+      },
+      "name": "Дабл Чізбургер",
+      "path": "doublecheesburger",
+      "description": "Два біфштекси з натуральної яловичини, два шматочки сиру “Чеддер”, цибуля, гірчиця, кетчуп, булочка",
+      "weight": "110 г",
+      "price": 65,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/product%2FSdwchDoubleCheeseburger.jfif.jfif?alt=media&token=4699e994-56a6-45c9-9618-030dd00d013f",
+      "count": 1,
+      "id": 3
+    },
+    {
+      "shop": {
+        "name": "SushiRoom",
+        "path": "sushiroom",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/shop%2Flogo.png.png?alt=media&token=b175d95f-e0ab-42d9-bb68-d8b18487451c",
+        "id": 3
+      },
+      "name": "Тамаго",
+      "path": "tamago",
+      "description": "Склад: лосось, майонез, кунжут б., тамаго, норі, рис.",
+      "weight": "190 г",
+      "price": 123,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/product%2F10-thumb.png.png?alt=media&token=ddb8f87c-da4a-4e4a-abc3-b0ea704504f2",
+      "count": 1,
+      "id": 4
+    }
+  ],
+  "orders": [
+    {
+      "name": "кнкрнерке",
+      "phoneNumber": "0985555555",
+      "email": "trht@rthrtr.gfh",
+      "address": "Sadivnycha 4A",
+      "houseNumber": "2",
+      "apartmentNumber": "2",
+      "payment": "card",
+      "notes": null,
+      "basket": [
+        {
+          "shop": {
+            "name": "McDonalds",
+            "path": "mcdonalds",
+            "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/shop%2F732217.png.png?alt=media&token=f0ee82e0-8f25-4916-af3c-92b9f53669b6",
+            "id": 1
+          },
+          "name": "Біг Мак",
+          "path": "bigmac",
+          "description": "Два біфштекси з натуральної яловичини, цибуля, маринований огірок, сир “Чеддер”, свіжий салат, заправлені спеціальним соусом, у булочці з насінням сезаму.",
+          "weight": "250 г",
+          "price": 90,
+          "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/product%2Fthumb.Sdwch_BigMac.jfif.jfif?alt=media&token=bb99e06b-758b-4761-8d2c-1e2741ee284f",
+          "count": 2,
+          "id": 2
+        },
+        {
+          "shop": {
+            "name": "McDonalds",
+            "path": "mcdonalds",
+            "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/shop%2F732217.png.png?alt=media&token=f0ee82e0-8f25-4916-af3c-92b9f53669b6",
+            "id": 1
+          },
+          "name": "Дабл Чізбургер",
+          "path": "doublecheesburger",
+          "description": "Два біфштекси з натуральної яловичини, два шматочки сиру “Чеддер”, цибуля, гірчиця, кетчуп, булочка",
+          "weight": "110 г",
+          "price": 65,
+          "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/product%2FSdwchDoubleCheeseburger.jfif.jfif?alt=media&token=4699e994-56a6-45c9-9618-030dd00d013f",
+          "count": 1,
+          "id": 3
+        },
+        {
+          "shop": {
+            "name": "SushiRoom",
+            "path": "sushiroom",
+            "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/shop%2Flogo.png.png?alt=media&token=b175d95f-e0ab-42d9-bb68-d8b18487451c",
+            "id": 3
+          },
+          "name": "Тамаго",
+          "path": "tamago",
+          "description": "Склад: лосось, майонез, кунжут б., тамаго, норі, рис.",
+          "weight": "190 г",
+          "price": 123,
+          "imagePath": "https://firebasestorage.googleapis.com/v0/b/fooddelivery-98ead.appspot.com/o/product%2F10-thumb.png.png?alt=media&token=ddb8f87c-da4a-4e4a-abc3-b0ea704504f2",
+          "count": 1,
+          "id": 4
+        }
+      ],
+      "price": 368,
+      "status": "PENDING",
+      "id": 1
+    }
+  ]
+}

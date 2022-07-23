@@ -1,0 +1,70 @@
+<div class="input-group mb-3">
+    <input type="text" class="form-control">
+    <button data-bs-toggle="modal" data-bs-target="#discountModal" class="btn btn-outline-dark"
+      type="button" >create discount</button>
+  </div>
+  <hr>
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Image</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of adminDiscounts">
+        <td>{{ d.id }}</td>
+        <td>{{ d.name }}</td>
+        <td>{{ d.description | slice:0:50 }}...</td>
+        <td>
+          <img [src]="d.imagePath" alt="" width="100px">
+        </td>
+        <td>
+          <div class="action">
+            <button (click)="editDiscount(d)" class="btn btn-outline-dark mx-3" data-bs-toggle="modal"
+              data-bs-target="#discountModal">edit</button>
+            <button (click)="deleteDiscount(d)" class="btn btn-outline-dark">delete</button>
+  
+          </div>
+        </td>
+  
+      </tr>
+    </tbody>
+  </table>
+ 
+  <div class="modal fade" id="discountModal" tabindex="-1" aria-labelledby="discountModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form [formGroup]="discountForm" class="modal-content" (ngSubmit)="saveDiscount()">
+        <div class="modal-header">
+          <h5 class="modal-title" id="discountModalLabel">Акції</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="name" class="form-label fw-bold">Code</label>
+            <br>
+            <input type="text" formControlName="name" id="name" value="{{code}}">
+            <button type="button" class="btn btn-secondary ms-3" (click)="randomeCode()" >get code</button>
+            <br>
+            <label for="description" class="form-label fw-bold">Опис</label>
+            <textarea formControlName="description" class="form-control" id="description" rows="10"></textarea>
+            <input type="text" formControlName="imagePath" [hidden]="true">
+            <input *ngIf="!isUploaded" type="file" (change)="upload($event)">
+            <ng-container *ngIf="isUploaded">
+              <img [src]="valueByControl('imagePath')" alt="" width="120px">
+              <button type="button" (click)="deleteImage()" >delete</button>
+            </ng-container>
+            
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" #close >Close</button>
+          <button type="submit" class="btn btn-primary" [disabled]="discountForm.invalid">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

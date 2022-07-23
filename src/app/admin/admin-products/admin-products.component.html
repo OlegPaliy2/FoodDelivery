@@ -1,0 +1,100 @@
+<div class="input-group mb-3">
+    <input type="text" class="form-control">
+    <button data-bs-toggle="modal" data-bs-target="#productModal" class="btn btn-outline-dark"
+      type="button">create product</button>
+  </div>
+  <hr>
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Path</th>
+        <th scope="col">Restaurant</th>
+        <th scope="col">Description</th>
+        <th scope="col">Weight</th>
+        <th scope="col">Price</th>
+        <th scope="col">Image</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of adminProducts">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.path }}</td>
+        <td>{{ product.shop.name }}</td>
+        <td>{{ product.description | slice:0:70  }}</td>
+        <td>{{ product.weight }}</td>
+        <td>{{ product.price | currency: 'UAH':'symbol-narrow'}}</td>
+  
+        <td>
+          <img [src]="product.imagePath" alt="" width="100px">
+        </td>
+        <td>
+          <div class="action">
+            <button (click)="editProduct(product)" class="btn btn-outline-dark mx-3" data-bs-toggle="modal"
+              data-bs-target="#productModal">edit
+            </button>
+            <button (click)="deleteProduct(product)" class="btn btn-outline-dark">delete</button>
+  
+          </div>
+        </td>
+  
+      </tr>
+    </tbody>
+  </table>
+  <!-- Modal -->
+  <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form [formGroup]="productForm" class="modal-content" (ngSubmit)="saveProduct()">
+        <div class="modal-header">
+          <h5 class="modal-title" id="productModalLabel">Продукт</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex flex-direction:column justify-content-center align-items-center">
+          <div class="mb-3">
+            <label class="form-label fw-bold">Restaurant</label>
+            <br>
+            <select formControlName="shop" (change)="changeShop()">
+              <option [ngValue]="shop" *ngFor="let shop of adminShop">{{ shop.name }}</option>
+            </select>
+            <br>
+            <label class="form-label fw-bold">Name</label>
+            <br>
+            <input type="text" formControlName="name">
+            <br>
+            <label class="form-label fw-bold">Path(English)</label>
+            <br>
+            <input type="text" formControlName="path">
+            <br>
+            <label class="form-label fw-bold">Description</label>
+            <br>
+            <textarea formControlName="description" id="" cols="30" rows="5">Description</textarea>
+            <br>
+            <label class="form-label fw-bold">Weight</label>
+            <br>
+            <input type="text" formControlName="weight">
+            <br>
+            <label class="form-label fw-bold">Prise</label>
+            <br>
+            <input type="number" formControlName="price">
+            <br>
+            <input type="text" formControlName="imagePath" [hidden]="true">
+            <br>
+            <input *ngIf="!isUploaded" type="file" (change)="upload($event)">
+            <ng-container *ngIf="isUploaded">
+              <img [src]="valueByControl('imagePath')" alt="" width="120px">
+              <button type="button" (click)="deleteImage()">delete</button>
+            </ng-container>
+  
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" #close>Close</button>
+          <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

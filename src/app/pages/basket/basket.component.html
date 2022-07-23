@@ -1,0 +1,59 @@
+<div class="none" *ngIf="basket.length>0"></div>
+<div class="basket" (click)="Location.back()" *ngIf="basket.length > 0"></div>
+
+<div class="basketSideBar ms-auto" *ngIf="basket.length>0">
+  <div class="basketSidebarHeader">
+    <div>
+      <h3>Кошик</h3>
+    </div>
+  </div>
+  <hr>
+  <div class="shoppingCard">
+    <div class="shoppingCartCard" *ngFor="let b of basket">
+      <div class="shoppingCartCardImage">
+          <img [src]="b.imagePath" width="100px">
+      </div>
+      <div class="shoppingCartCardInfo">
+        <h5>{{b.name}}</h5>
+        <div class="shoppingCartCardPriceGroup">
+          <div class="productCardPrice">
+              <strong>{{b.price*b.count}} грн</strong>
+          </div>
+          <div class="CountRange">
+              <div style="display: flex;">
+              <button type="button" (click)="changeCount(b,false)">-</button>
+              <input type="text" style= "width: 29px; border: none;" readonly [value]="b.count">
+              <button type="button" (click)="changeCount(b,true)">+</button>
+              </div>
+          </div>
+        </div>
+        <div class="productInfo">{{b.description}}</div>
+        <div class="shoppingCartCardClearButton">
+          <button (click)="deleteProduct(b)">× Видалити</button>
+        </div>
+      <hr>
+  </div>
+    </div>
+  </div>
+  <div class="shoppingCardFooter">
+    <div class="TotalPrice">{{total}} грн</div>
+    <div class="order">
+      <a href="">
+        <button class="buy" >
+          <a [routerLink]="[ '/payment']" routerLinkActive="active"> 
+          <h5>Оформити замовлення</h5></a>
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="emptyBasket" *ngIf="basket.length===0">
+  <h2>Кошик порожній 🥺</h2>
+  <a [routerLink]="[ '/']">На головну</a>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+<div class="position">
+<h3 class="mainTitle" >Лови знижку!</h3>
+<div class="container mt-3 ">
+<div class="row">
+    <div class="col-4" *ngFor="let d of userDiscounts">
+        <div class="card">
+            <img [src]="d.imagePath" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title">{{d?.name}}</h5>
+              <p class="card-text ">{{d?.description}}</p>
+              <a href="#" class="btn btn-outline-dark">Копіювати</a>
+            </div>
+          </div>
+    </div>
+</div>
+<a href="" class="btn col-5 btn-outline-dark mt-5 mb-3" (click)="location.back()"> <h3>Назад</h3> </a>
+</div>
+
+
+</div>
+
+

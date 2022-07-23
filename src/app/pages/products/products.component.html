@@ -1,0 +1,21 @@
+<div class="container-fluid d-flex flex-row flex-wrap justify-content-start">
+    <div class="card col-2 " *ngFor="let prod of products">
+      <img [src]="prod.imagePath" class="card-img-top align-self-center" alt="{{prod.name}}">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <h3>{{prod.name}}</h3>
+        <p class="card-text">{{prod.description}}</p>
+        <div class="productCardFooter d-flex justify-content-between">
+          <div class="form_radio_btn">
+            <input id="{{prod.id}}" type="radio" name="{{prod.id}}" value="{{prod.weight}}" checked >
+            <label for="{{prod.id}}">{{prod.weight}}</label>
+          </div>
+          <a class="btn addToCartButton fw-bold" (click)="addToBasket(prod)">В кошик</a>
+          <h4>{{prod.price}} грн</h4>
+        </div>
+  
+  
+      </div>
+    </div>
+   
+  </div>
+   <a href="" class="btn btnBack col-5 btn-outline-dark mt-5 mb-3" (click)="Location.back()"> <h3>Назад</h3> </a>

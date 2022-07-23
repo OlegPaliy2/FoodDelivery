@@ -1,0 +1,71 @@
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { IProductResponse } from 'src/app/shared/inerfaces/product/product.interface';
+import { ProductService } from 'src/app/shared/services/product/product.service';
+import { Location } from '@angular/common';
+import { OrderService } from 'src/app/shared/services/order/order.service';
+
+
+@Component({
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.scss']
+})
+export class ProductsComponent implements OnInit, OnDestroy {
+  public products: Array<IProductResponse> = [];
+  public countItem = 0;
+  public eventsSubscriptions!: Subscription;
+
+
+  constructor(
+    private productService: ProductService,
+    private orderService: OrderService,
+    public Location: Location,
+    private router: Router,
+    private activatedRoute: ActivatedRoute 
+  ) { 
+    this.eventsSubscriptions = this.router.events.subscribe(event => {
+     if(event instanceof NavigationEnd){
+       const shopName = this.activatedRoute.snapshot.paramMap.get('Shop');
+       this.loadProducts(shopName as string);
+     }
+      
+    })
+
+  }
+
+  ngOnInit(): void {}
+
+  loadProducts(name: string): void {
+    this.productService.getByCategory(name).subscribe(data => {
+      this.products = data;  
+    }, err => {
+      console.log('load Product error', err);
+    })
+  }
+
+  addToBasket(product: IProductResponse): void{
+    let basket: IProductResponse[] =[];
+    if(localStorage.length > 0 && localStorage.getItem('basket')){
+      basket = JSON.parse(localStorage.getItem('basket') as string );
+      if(basket.some(prod =>prod.id===product.id)){
+        const index =basket.findIndex(prod =>prod.id===product.id);
+        basket[index].count += product.count;
+      }
+      else{
+        basket.push(product);
+      }
+    }
+    else{
+      basket.push(product);
+    }
+    localStorage.setItem('basket', JSON.stringify(basket));
+    product.count = 1;
+    this.orderService.changeBasket.next(true);
+  
+  }
+  ngOnDestroy():void{
+    this.eventsSubscriptions.unsubscribe();
+  }
+}

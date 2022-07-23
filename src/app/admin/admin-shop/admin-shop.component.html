@@ -1,0 +1,78 @@
+<div class="input-group mb-3 ">
+    <input type="text" class="form-control">
+    <button data-bs-toggle="modal" data-bs-target="#shopModal" class="btn btn-outline-dark" type="button">add 
+      shop</button>
+  </div>
+  <hr>
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Path</th>
+        <th scope="col">Image</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let shop of adminShop">
+        <td>{{ shop.id }}</td>
+        <td>{{ shop.name }}</td>
+        <td>{{ shop.path }}</td>
+  
+        <td>
+          <img [src]="shop.imagePath" alt="" width="100px">
+        </td>
+        <td>
+          <div class="action">
+            <button (click)="editShop(shop)" class="btn btn-outline-dark mx-3" data-bs-toggle="modal"
+              data-bs-target="#shopModal">edit</button>
+            <button (click)="deleteShop(shop)" class="btn btn-outline-dark">delete</button>
+  
+          </div>
+        </td>
+  
+      </tr>
+    </tbody>
+  </table>
+  <!-- Modal -->
+  <div class="modal fade" id="shopModal" tabindex="-1" aria-labelledby="shopModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form [formGroup]="shopForm" class="modal-content" (ngSubmit)="saveShop()">
+        <div class="modal-header">
+          <h5 class="modal-title" id="shopModalLabel">Ресторани</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body d-flex flex-direction:column justify-content-center align-items-center">
+          <div class="mb-3">
+            <label for="description" class="form-label fw-bold">Name</label>
+            <br>
+            <input type="text" formControlName="name">
+            <br>
+            <label for="description" class="form-label fw-bold">Path(English)</label>
+            <br>
+            <input type="text" formControlName="path">
+            <br>
+            <input type="text" formControlName="imagePath" [hidden]="true">
+            <br>
+            <input *ngIf="!isUploaded" type="file" (change)="upload($event)">
+            <div class="progress mt-3">
+                <div class="progress-bar bg-dark" role="progressbar" [style.width.%]="uploadPercent" aria-valuemin="0"
+            aria-valuemax="100"></div>
+            </div>
+            <hr>
+            <ng-container *ngIf="isUploaded">
+              <img [src]="valueByControl('imagePath')" alt="" width="120px">
+            </ng-container>
+            <hr>
+            <button type="button" class="btn btn-danger" (click)="deleteImage()">delete</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" #close>Close</button>
+          <button type="submit" class="btn btn-primary" [disabled]="shopForm.invalid">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

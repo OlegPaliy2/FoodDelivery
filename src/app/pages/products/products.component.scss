@@ -1,0 +1,77 @@
+.container-fluid {
+	margin: 80px 0px 0px 80px;
+	width: 80%;
+	display: grid;
+    grid-gap: 16px;
+	z-index: 2;
+}
+@media all and (max-width: 1025px) {
+	.container-fluid {
+	  grid-gap: 11px;
+	}
+}
+	
+  @media all and (max-width: 770px) {
+	.container-fluid {
+	  grid-gap: 4px;
+	}
+  }
+
+.card {
+  border: none;
+  margin: 5px;
+  width: 23%;
+  padding-top: 30px;
+
+}
+@media all and (max-width: 1025px) {
+	.card {
+		width: 31%;
+	}
+}
+	
+  @media all and (max-width: 770px) {
+	.card {
+		width: 31%;
+	}
+  }
+.card:hover {
+  box-shadow: 0 0 33px -8px rgb(0 0 0 / 25%);
+}
+
+.card-img-top {
+  max-width: 80%;
+}
+
+.addToCartButton {
+  color: #212529
+}
+.form_radio_btn {
+	display: flex;
+	margin-right: 5px;
+    align-items: center;
+    color: aliceblue;
+}
+.form_radio_btn input[type=radio] {
+	display: none;
+}
+.form_radio_btn label {
+	display: inline-block;
+	cursor: pointer;
+	padding: 0px 5px;
+	line-height: 24px;
+	border-radius: 6px;
+	user-select: none;
+    width: 100%;
+    font-weight: 500;
+}
+ 
+
+.form_radio_btn input[type=radio]:checked + label {
+	background: #212529;
+}
+.btnBack{
+ margin-left: 33%;
+}
+
+
